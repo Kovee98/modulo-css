@@ -1,12 +1,10 @@
 <template>
-    <div class="title">
-        <div class="is-flex">
-            <img
-                src="public/android-chrome-512x512.png"
-                class="logo"
-            />
-            <h1>modulo.css</h1>
-        </div>
+    <div class="title is-flex">
+        <img
+            src="public/android-chrome-512x512.png"
+            class="logo"
+        />
+        <h2>modulo.css</h2>
     </div>
 </template>
 

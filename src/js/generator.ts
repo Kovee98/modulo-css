@@ -1,7 +1,7 @@
 import { Form } from '../types/index';
 
 /*
-    the main file that generates the dynamic css output
+    the main file that generates the output css files
 */
 
 function readFile (path: string) {

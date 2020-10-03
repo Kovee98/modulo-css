@@ -11,5 +11,6 @@ export interface Form {
 
 export interface File {
     name: string,
-    contents: string
+    contents: string,
+    size: string
 }

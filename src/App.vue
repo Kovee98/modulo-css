@@ -2,19 +2,28 @@
     <TitleBar/>
 
     <div class="content">
-        <h2 class="h2">Name</h2>
-        <input id="name" type="text" v-model="form.name">
+        <div class="section">
+            <h3 class="mb-1">Name</h3>
+            <input
+                id="name"
+                type="text"
+                v-model="form.name"
+                class="has-border-focus has-border-radius"
+            >
+        </div>
 
-        <ModuleList v-model:modules="form.modules"/>
+        <ModuleList v-model:form="form"/>
 
-        <button
-            @click="generateFiles"
-            class="btn is-success"
-        >
-            Generate
-        </button>
+        <div class="section is-centered">
+            <button
+                @click="generateFiles"
+                class="btn is-success has-shadow has-border-focus has-border-radius"
+            >
+                Generate
+            </button>
+        </div>
 
-        <FileOutputs v-model:files="files"/>
+        <FileOutputs v-model:form="form" v-model:files="files"/>
     </div>
 </template>
 
@@ -36,35 +45,60 @@
         },
         setup () {
             const form: Form = {
-                name: '',
+                name: 'my-awesome-css',
                 modules: modules
             };
 
             const files: Array<File> = reactive([]);
 
+            const activeModules: Array<string> = reactive([]);
+
             const generateFiles = async () => {
-                const mods = form.modules.filter((module: Module) => module.isChecked);
+                // console.log('activeModules:', activeModules.forEach((mod: string) => console.log(mod)));
+                // console.log('activeModules:', activeModules);
+                const mods = modules.filter((module: Module) => module.isChecked);
 
                 const res = await generate({
-                    ...form,
+                    name: form.name,
                     modules: mods
                 });
+
+                files.length = 0;
 
                 // add different file types here
                 files.push({
                     name: `${form.name}.css`,
-                    contents: res.file
+                    contents: res.file,
+                    size: formatBytes(encodeURI(res.file).split(/%..|./).length - 1)
                 });
+
                 files.push({
                     name: `${form.name}.min.css`,
-                    contents: res.minFile
+                    contents: res.minFile,
+                    size: formatBytes(encodeURI(res.minFile).split(/%..|./).length - 1)
                 });
             };
 
+            const formatBytes = (bytes: number, decimals = 1) => {
+                if (bytes === 0) return '0 B';
+
+                const k = 1024;
+                const dm = decimals < 0 ? 0 : decimals;
+                const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+            };
+
             return {
+                // name,
+                // modules,
                 form,
                 files,
-                generateFiles
+                activeModules,
+                generateFiles,
+                formatBytes
             };
         }
     });

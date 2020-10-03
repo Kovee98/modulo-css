@@ -1,57 +1,42 @@
 <template>
-    <div class="modules">
-        <h2 class="h2">Modules</h2>
-        <div
-            v-for="module in modules"
-            :key="module.id"
-            class="module"
-        >
-            <input
-                type="checkbox"
-                :name="module.name"
-                :id="module.name"
-                v-model="module.isChecked"
+    <div class="section">
+        <h3 class="mb-1">Modules</h3>
+
+        <div class="modules">
+            <label
+                v-for="module in form.modules"
+                :key="module.id"
+                class="module has-shadow has-border-radius capitalize"
+                :class="{'is-focused' : module.isChecked}"
+                :for="module.name"
             >
-            <label :for="module.name" class="capitalize">
                 {{module.name}}
+                <input
+                    type="checkbox"
+                    :id="module.name"
+                    v-model="module.isChecked"
+                >
             </label>
-            <br>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-    import { defineComponent } from 'vue';
+    import { defineComponent, reactive } from 'vue';
+    // import { Form } from '../types/index';
 
     export default defineComponent({
         name: 'ModuleList',
         props: {
-            modules: Array
+            form: {
+                required: true,
+                type: Object
+            }
         },
-        setup ({ modules }) {
+        setup ({ form }) {
             return {
-                modules
+                form: reactive(form)
             };
         }
     });
 </script>
-
-<style lang="scss" scoped>
-    .modules {
-        padding: 1.25rem 0;
-    }
-
-    .module {
-        padding: 1rem;
-        font-size: 1.5rem;
-
-        * {
-            cursor: pointer;
-        }
-
-        input {
-            margin-right: 1rem;
-            transform: scale(1.4);
-        }
-    }
-</style>

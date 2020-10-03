@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@import './colors.scss';
+@import './vars.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+    font-size: 16pt;
+    color: $text;
+}
+
+.section {
+    padding: 1.25rem 0;
+    width: 100%
+}
+
+.has-shadow {
+    border: 1px solid $offWhite;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15),
+                0 3px 2px -2px rgba(0,0,0,0.15),
+                0 1px 6px 0 rgba(0,0,0,0.15);
+}
+
+a {
+    text-decoration: none;
+}
+
+.is-flex {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.is-centered {
+    display: flex;
+    justify-content: center;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.mb-1 {
+    padding-bottom: 1rem;
+}
+
+.has-border-focus {
+    &:focus {
+        outline: none;
+        border-color: transparentize($primary, 0.5);
+        box-shadow: 0 0 0 3px transparentize($primary, 0.5);
+    }
+}
+
+.is-focused {
+    outline: none;
+    border-color: transparentize($primary, 0.5);
+    box-shadow: 0 0 0 3px transparentize($primary, 0.5);
+}
+
+.has-border-radius {
+    border-radius: $borderRadius;
+}
+
+input[type=text] {
+    padding: 8px;
+    font-size: 1.5rem;
+    border: 1px solid $offWhite;
+}
+
+.btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #8a8a8a;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    color: $white;
+
+    &:hover {
+        background: darken(#8a8a8a, 5%);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.is-success {
+    background: $primary;
+
+    &:hover {
+        background: darken($primary, 5%);
+    }
+}
+
+.modules {
+    display: flex;
+    flex-flow: row wrap;
+
+    .module {
+        padding: 1rem;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        width: 10rem;
+        height: 10rem;
+        cursor: pointer;
+
+        * {
+            cursor: pointer;
+        }
+
+        input {
+            margin-right: 1rem;
+            transform: scale(1.4);
+            display: none;
+        }
+    }
+}
