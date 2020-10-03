@@ -51,11 +51,7 @@
 
             const files: Array<File> = reactive([]);
 
-            const activeModules: Array<string> = reactive([]);
-
             const generateFiles = async () => {
-                // console.log('activeModules:', activeModules.forEach((mod: string) => console.log(mod)));
-                // console.log('activeModules:', activeModules);
                 const mods = modules.filter((module: Module) => module.isChecked);
 
                 const res = await generate({
@@ -92,11 +88,8 @@
             };
 
             return {
-                // name,
-                // modules,
                 form,
                 files,
-                activeModules,
                 generateFiles,
                 formatBytes
             };
