@@ -42,6 +42,7 @@ module.exports = {
             switchCase: 1
         }],
         'vue/valid-template-root': 'off',
+        'vue/valid-v-model': 'off',
         semi: ['error', 'always', { omitLastInOneLineBlock: false }]
     },
     overrides: [

@@ -2,55 +2,69 @@
     <TitleBar/>
 
     <div class="content">
-        <input type="text" v-model="form.name">
+        <h2 class="h2">Name</h2>
+        <input id="name" type="text" v-model="form.name">
 
         <ModuleList v-model:modules="form.modules"/>
 
         <button
-            @click="download"
+            @click="generateFiles"
             class="btn is-success"
         >
-            Download
+            Generate
         </button>
+
+        <FileOutputs v-model:files="files"/>
     </div>
 </template>
 
 <script lang="ts">
-    import 
-    import { defineComponent } from 'vue';
+    import { defineComponent, reactive } from 'vue';
     import TitleBar from './components/TitleBar.vue';
     import ModuleList from './components/ModuleList.vue';
-    import { modules } from './modules/modules.json';
+    import FileOutputs from './components/FileOutputs.vue';
+    import modules from './modules/modules.js';
     import generate from './js/generator';
+    import { Form, Module, File } from './types/index';
 
     export default defineComponent({
         name: 'App',
         components: {
             TitleBar,
-            ModuleList
+            ModuleList,
+            FileOutputs
         },
         setup () {
-            const form: GenForm = {
+            const form: Form = {
                 name: '',
                 modules: modules
             };
 
-            const state = {
-                form: form
+            const files: Array<File> = reactive([]);
+
+            const generateFiles = async () => {
+                const mods = form.modules.filter((module: Module) => module.isChecked);
+
+                const res = await generate({
+                    ...form,
+                    modules: mods
+                });
+
+                // add different file types here
+                files.push({
+                    name: `${form.name}.css`,
+                    contents: res.file
+                });
+                files.push({
+                    name: `${form.name}.min.css`,
+                    contents: res.minFile
+                });
             };
 
-            function download () {
-                const form = state.form;
-                console.log('form:', form);
-
-                form.modules = form.modules.filter((module : Module) => module.isChecked);
-
-                generate(form);
-            }
-
             return {
-                ...state,
-                download
+                form,
+                files,
+                generateFiles
             };
         }
     });

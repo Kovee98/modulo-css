@@ -1,3 +1,5 @@
+import { Form } from '../types/index';
+
 /*
     the main file that generates the dynamic css output
 */
@@ -34,7 +36,7 @@ function minify (src: string) {
 export default async function (form: Form) {
     try {
         const modules = form.modules || [];
-        let genFile = '';
+        let file = '';
 
         for (let i = 0; i < modules.length; i++) {
             const module = modules[i];
@@ -42,13 +44,16 @@ export default async function (form: Form) {
 
             const data = await readFile(`./src/modules/${name}/${name}.scss`);
 
-            genFile += data;
-            genFile += '\n\n';
+            file += data;
+            file += '\n\n';
         }
 
-        console.log('genFile:', genFile);
-        console.log(minify(genFile));
+        return Promise.resolve({
+            file: file,
+            minFile: minify(file)
+        });
     } catch (err) {
         console.error(err);
+        return Promise.reject(err);
     }
 };
