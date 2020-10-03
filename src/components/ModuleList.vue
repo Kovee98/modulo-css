@@ -6,11 +6,11 @@
             <label
                 v-for="module in form.modules"
                 :key="module.id"
-                class="module has-shadow has-border-radius capitalize"
+                class="module has-shadow has-border-radius"
                 :class="{'is-focused' : module.isChecked}"
                 :for="module.name"
             >
-                <p class="mb-1">{{module.name}}</p>
+                <p class="mb-1 capitalize">{{module.name}}</p>
                 <p class="is-light">{{module.desc}}</p>
                 <input
                     type="checkbox"

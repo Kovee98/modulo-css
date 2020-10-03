@@ -8,7 +8,9 @@
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
     "bump-version": "npm version --no-git-tag-version $VERSION",
-    "compress": "zip -jr modulo-css-$VERSION.zip dist && tar -zcf modulo-css-$VERSION.tar.gz dist"
+    "image:build": "docker build -t modulo-css:test .",
+    "image:run": "docker run -it -p 8085:80 --name modulo-css-test modulo-css:test",
+    "image:rm": "docker stop modulo-css-test && docker rm modulo-css-test"
   },
   "husky": {
     "hooks": {
@@ -24,7 +26,6 @@
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
-    "@semantic-release/github": "^7.1.1",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
