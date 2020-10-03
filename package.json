@@ -8,7 +8,9 @@
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
     "bump-version": "npm version --no-git-tag-version $VERSION",
-    "compress": "zip -jr modulo-css-$VERSION.zip dist && tar -zcf modulo-css-$VERSION.tar.gz dist"
+    "image:build": "docker build -t modulo-css:test .",
+    "image:run": "docker run -it -p 8085:80 --name modulo-css-test modulo-css:test",
+    "image:rm": "docker stop modulo-css-test && docker rm modulo-css-test"
   },
   "husky": {
     "hooks": {
