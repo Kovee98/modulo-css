@@ -1,3 +1,7 @@
+/*
+    module list
+*/
+
 export default [
     {
         name: 'spacing',

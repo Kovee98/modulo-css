@@ -23,7 +23,7 @@
     import TitleBar from './components/TitleBar.vue';
     import ModuleList from './components/ModuleList.vue';
     import FileOutputs from './components/FileOutputs.vue';
-    import modules from './modules/modules.js';
+    import modules from './modules.js';
     import generate from './js/generator';
     import { Form, Module, File } from './types/index';
 
