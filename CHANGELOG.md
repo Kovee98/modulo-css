@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.1.0](https://github.com/Kovee98/modulo-css/compare/v1.0.0...v1.1.0) (2020-10-03)
+
+
+### Bug Fixes
+
+* **modules:** change description styling ([d50c67c](https://github.com/Kovee98/modulo-css/commit/d50c67c5bcf372c768f53361472b11d87670fa32))
+* **modules:** move modules to public folder ([18fcb42](https://github.com/Kovee98/modulo-css/commit/18fcb429350a24f4353059823357b17f0b367677))
+
+
+### Features
+
+* **docker:** add npm scripts for docker testing ([97cbb81](https://github.com/Kovee98/modulo-css/commit/97cbb815875e82fb58b5863838d247e3516ba497))
+
 # 1.0.0 (2020-10-03)
 
 
