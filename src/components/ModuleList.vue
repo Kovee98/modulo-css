@@ -10,7 +10,8 @@
                 :class="{'is-focused' : module.isChecked}"
                 :for="module.name"
             >
-                {{module.name}}
+                <p class="mb-1">{{module.name}}</p>
+                <p class="is-light">{{module.desc}}</p>
                 <input
                     type="checkbox"
                     :id="module.name"
@@ -23,7 +24,6 @@
 
 <script lang="ts">
     import { defineComponent, reactive } from 'vue';
-    // import { Form } from '../types/index';
 
     export default defineComponent({
         name: 'ModuleList',
