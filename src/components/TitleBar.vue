@@ -1,7 +1,7 @@
 <template>
     <div class="title is-flex">
         <img
-            src="public/android-chrome-512x512.png"
+            src="/android-chrome-512x512.png"
             class="logo"
         />
         <h2>modulo.css</h2>
