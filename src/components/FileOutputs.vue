@@ -3,7 +3,7 @@
         v-if="files && files.length > 0"
         class="section"
     >
-        <h3 class="mb-1">Outputs</h3>
+        <h3 class="mb-1">Output</h3>
         <div
             v-for="file of files"
             :key="file.id"
@@ -63,7 +63,7 @@
         padding: 1rem;
 
         .name {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-weight: 600;
         }
 
