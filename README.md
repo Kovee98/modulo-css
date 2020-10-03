@@ -4,4 +4,4 @@
 > A completely modular CSS framework
 
 ## Contributing
-PRs are more than welcome! But please read and understand [CONTRIBUTING.md](./CONTRIBUTING.md) before doing so.
+PRs are more than welcome! But please read and understand [CONTRIBUTING.md](./CONTRIBUTING.md) first!
