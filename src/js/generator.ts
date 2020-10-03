@@ -7,7 +7,7 @@ import { Form } from '../types/index';
 function readFile (path: string) {
     return new Promise((resolve, reject) => {
         const req = new XMLHttpRequest();
-        req.open("GET", path, false);
+        req.open("GET", path, true);
     
         req.onreadystatechange = function () {
             if(req.readyState === 4) {
