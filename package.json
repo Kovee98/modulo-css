@@ -1,6 +1,6 @@
 {
   "name": "modulo-css",
-  "description": "",
+  "description": "A completely modular CSS framework",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
