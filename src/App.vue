@@ -14,21 +14,12 @@
 
         <ModuleList v-model:form="form"/>
 
-        <div class="section is-centered">
-            <button
-                @click="generateFiles"
-                class="btn is-success has-shadow has-border-focus has-border-radius"
-            >
-                Generate
-            </button>
-        </div>
-
         <FileOutputs v-model:form="form" v-model:files="files"/>
     </div>
 </template>
 
 <script lang="ts">
-    import { defineComponent, reactive } from 'vue';
+    import { defineComponent, reactive, watch } from 'vue';
     import TitleBar from './components/TitleBar.vue';
     import ModuleList from './components/ModuleList.vue';
     import FileOutputs from './components/FileOutputs.vue';
@@ -44,10 +35,10 @@
             FileOutputs
         },
         setup () {
-            const form: Form = {
+            const form: Form = reactive({
                 name: 'my-awesome-css',
                 modules: modules
-            };
+            });
 
             const files: Array<File> = reactive([]);
 
@@ -74,6 +65,9 @@
                     size: formatBytes(encodeURI(res.minFile).split(/%..|./).length - 1)
                 });
             };
+
+            // automatically re-generate files on form update
+            watch(form, generateFiles);
 
             const formatBytes = (bytes: number, decimals = 1) => {
                 if (bytes === 0) return '0 B';
