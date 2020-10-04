@@ -3,7 +3,10 @@
         v-if="files && files.length > 0"
         class="section"
     >
-        <h3 class="mb-1">Output</h3>
+        <h3 class="mb-1">
+            Output
+            <span class="is-light ml-1">(Download your files)</span>
+        </h3>
         <div
             v-for="file of files"
             :key="file.id"
@@ -11,7 +14,7 @@
         >
             <div>
                 <span class="name">{{file.name}}</span>
-                <span class="size">{{file.size}}</span>
+                <span class="size is-light">{{file.size}}</span>
             </div>
 
             <a

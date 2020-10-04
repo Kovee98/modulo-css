@@ -1,6 +1,9 @@
 <template>
     <div class="section">
-        <h3 class="mb-1">Modules</h3>
+        <h3 class="mb-1">
+            Modules
+            <span class="is-light ml-1">(Select some modules)</span>
+        </h3>
 
         <div class="modules">
             <label
@@ -40,3 +43,24 @@
         }
     });
 </script>
+
+<style lang="scss" scoped>
+    .modules {
+        display: flex;
+        flex-flow: row wrap;
+
+        .module {
+            padding: 1rem;
+            margin-right: 1rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            width: 10rem;
+            height: 10rem;
+            cursor: pointer;
+
+            input {
+                display: none;
+            }
+        }
+    }
+</style>

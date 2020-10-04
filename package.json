@@ -10,7 +10,8 @@
     "bump-version": "npm version --no-git-tag-version $VERSION",
     "image:build": "docker build -t modulo-css:test .",
     "image:run": "docker run -it -p 8085:80 --name modulo-css-test modulo-css:test",
-    "image:rm": "docker stop modulo-css-test && docker rm modulo-css-test"
+    "image:rm": "docker stop modulo-css-test & docker rm modulo-css-test",
+    "image:rebuild": "npm run image:rm & npm run image:build & npm run image:run"
   },
   "husky": {
     "hooks": {

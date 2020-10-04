@@ -21,14 +21,16 @@
 
 <style lang="scss" scoped>
     .title {
-        padding: 1.25rem;
+        padding: 0.75rem;
         background: #313131;
         color: #e9e9e9;
+        display: flex;
+        align-items: center;
     }
 
     .logo {
-        width: 40px;
-        height: 40px;
-        margin-right: 1rem;
+        width: 35px;
+        height: 35px;
+        margin: 0 1rem;
     }
 </style>
