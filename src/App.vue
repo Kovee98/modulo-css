@@ -2,13 +2,19 @@
     <TitleBar/>
 
     <div class="content">
+        <h2 class="mb-1">Create your CSS framework</h2>
+
         <div class="section">
-            <h3 class="mb-1">Name</h3>
+            <h3 class="mb-1">
+                Name
+                <span class="is-light ml-1">(Choose a name)</span>
+            </h3>
+
             <input
                 id="name"
                 type="text"
                 v-model="form.name"
-                class="has-border-focus has-border-radius"
+                class="has-border-focus has-border-radius mt-1"
             >
         </div>
 
@@ -95,6 +101,8 @@
 
 <style lang="scss" scoped>
     .content {
-        padding: 1rem 2rem;
+        max-width: 768px;
+        margin: 40px auto;
+        padding: 0 24px;
     }
 </style>

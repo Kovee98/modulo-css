@@ -21,7 +21,7 @@
 }
 
 .section {
-    padding: 1.25rem 0;
+    padding: 2rem 0;
     width: 100%
 }
 
@@ -59,6 +59,14 @@ a {
     padding-bottom: 1rem;
 }
 
+.ml-1 {
+    margin-left: 0.5rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
 .has-border-focus {
     &:focus {
         outline: none;
@@ -71,6 +79,7 @@ a {
     outline: none;
     border-color: transparentize($primary, 0.5);
     box-shadow: 0 0 0 3px transparentize($primary, 0.5);
+    background: transparentize($primary, 0.85);
 }
 
 .has-border-radius {
@@ -78,13 +87,15 @@ a {
 }
 
 input[type=text] {
-    padding: 8px;
-    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
     border: 1px solid $offWhite;
+    color: $text;
 }
 
 .btn {
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     background: #8a8a8a;
     border: none;
@@ -105,29 +116,5 @@ input[type=text] {
 
     &:hover {
         background: darken($primary, 5%);
-    }
-}
-
-.modules {
-    display: flex;
-    flex-flow: row wrap;
-
-    .module {
-        padding: 1rem;
-        margin-right: 1rem;
-        font-size: 1.5rem;
-        width: 10rem;
-        height: 10rem;
-        cursor: pointer;
-
-        * {
-            cursor: pointer;
-        }
-
-        input {
-            margin-right: 1rem;
-            transform: scale(1.4);
-            display: none;
-        }
     }
 }
