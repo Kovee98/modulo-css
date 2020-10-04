@@ -5,12 +5,7 @@
 export default [
     {
         name: 'spacing',
-        desc: 'Classes for margins, padding, etc.',
-        isChecked: false
-    },
-    {
-        name: 'typography',
-        desc: 'Classes for all things text related.',
+        desc: 'Classes for margins and padding.',
         isChecked: false
     }
 ];
