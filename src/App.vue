@@ -81,6 +81,8 @@
                 return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
             };
 
+            generateFiles();
+
             return {
                 form,
                 files,
