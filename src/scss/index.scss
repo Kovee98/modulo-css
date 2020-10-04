@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@font-face { 
+    font-family: "Quicksand";
+    src: url('../assets/fonts/Quicksand-VariableFont_wght.ttf');
+}
 
 @import './colors.scss';
 @import './vars.scss';
@@ -9,6 +12,7 @@
     font-family: 'Quicksand', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: 600;
 }
 
 #app {
