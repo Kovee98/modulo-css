@@ -42,7 +42,7 @@ export default async function (form: Form) {
             const module = modules[i];
             const name = module.name;
 
-            const data = await readFile(`/modules/${name}/${name}.scss`);
+            const data = await readFile(`/modules/${name}/index.css`);
 
             file += data;
             file += '\n\n';
