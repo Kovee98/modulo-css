@@ -1,33 +1,108 @@
-+typography-size($target:'');
-@each $size in $sizes {
-    $i: index($sizes, $size);
-    .is-size-#{$i}#{if($target == '', '', '-' + $target)} {
-        font-size: $size !important;
+/*
+    Typography
+    Based on https://github.com/jgthms/bulma/blob/master/sass/helpers/typography.sass
+    as a starting point but is intended to grow and change over time
+*/
+
+$gap: 32px !default;
+$tablet: 769px !default;
+$desktop: 960px + (2 * $gap) !default;
+$widescreen: 1152px + (2 * $gap) !default;
+$fullhd: 1344px + (2 * $gap) !default;
+
+$sizes: 3rem 2.5rem 2rem 1.5rem 1.25rem 1rem 0.75rem !default;
+
+@mixin typography-size($target: "") {
+    @each $size in $sizes {
+        $i: index($sizes, $size);
+
+        .is-size-#{$i}#{if($target == "", "", "-" + $target)} {
+            font-size: $size !important;
+        }
     }
 }
 
+@include typography-size;
 
-+typography-size()
+@mixin mobile {
+    @media screen and (max-width: $tablet - 1px) {
+        @content;
+    }
+}
 
-+mobile
-  +typography-size('mobile')
+@include mobile {
+    @include typography-size("mobile");
+}
 
-+tablet
-  +typography-size('tablet')
+@mixin tablet {
+    @media screen and (min-width: $tablet), print {
+        @content;
+    }
+}
 
-+touch
-  +typography-size('touch')
+@include tablet {
+    @include typography-size("tablet");
+}
 
-+desktop
-  +typography-size('desktop')
+@mixin touch {
+    @media screen and (max-width: $desktop - 1px) {
+        @content;
+    }
+}
 
-+widescreen
-  +typography-size('widescreen')
+@include touch {
+    @include typography-size("touch");
+}
 
-+fullhd
-  +typography-size('fullhd')
+@mixin desktop {
+    @media screen and (min-width: $desktop) {
+        @content;
+    }
+}
 
-$alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'right': 'right')
+@include desktop {
+    @include typography-size("desktop");
+}
+
+@mixin widescreen {
+    @media screen and (min-width: $widescreen) {
+        @content;
+    }
+}
+
+@include widescreen {
+    @include typography-size("widescreen");
+}
+
+@mixin fullhd {
+    @media screen and (min-width: $fullhd) {
+        @content;
+    }
+}
+
+@include fullhd {
+    @include typography-size("fullhd");
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px) {
+        @content;
+    }
+}
+
+@mixin widescreen-only {
+    @media screen and (min-width: $widescreen) and (max-width: $fullhd - 1px) {
+        @content;
+    }
+}
+
+$alignments: ("centered": "center", "justified": "justify", "left": "left", "right": "right");
 
 @each $alignment, $text-align in $alignments {
     .has-text-#{$alignment} {
@@ -36,42 +111,59 @@ $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'rig
 }
 
 @each $alignment, $text-align in $alignments {
-    +mobile
+    @include mobile {
         .has-text-#{$alignment}-mobile {
             text-align: #{$text-align} !important;
         }
-    +tablet
+    }
+
+    @include tablet {
         .has-text-#{$alignment}-tablet {
             text-align: #{$text-align} !important;
         }
-    +tablet-only
+    }
+
+    @include tablet-only {
         .has-text-#{$alignment}-tablet-only {
             text-align: #{$text-align} !important;
         }
-    +touch
+    }
+
+    @include touch {
         .has-text-#{$alignment}-touch {
             text-align: #{$text-align} !important;
         }
-    +desktop
+    }
+
+    @include desktop {
         .has-text-#{$alignment}-desktop {
             text-align: #{$text-align} !important;
         }
-    +desktop-only
+    }
+
+    @include desktop-only {
         .has-text-#{$alignment}-desktop-only {
             text-align: #{$text-align} !important;
         }
-    +widescreen
+    }
+
+    @include widescreen {
         .has-text-#{$alignment}-widescreen {
             text-align: #{$text-align} !important;
         }
-    +widescreen-only
+    }
+
+    @include widescreen-only {
         .has-text-#{$alignment}-widescreen-only {
             text-align: #{$text-align} !important;
         }
-    +fullhd
+    }
+
+    @include fullhd {
         .has-text-#{$alignment}-fullhd {
             text-align: #{$text-align} !important;
         }
+    }
 }
 
 .is-capitalized {
@@ -91,37 +183,21 @@ $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'rig
 }
 
 .has-text-weight-light {
-    font-weight: $weight-light !important;
+    font-weight: 300 !important;
 }
+
 .has-text-weight-normal {
-    font-weight: $weight-normal !important;
+    font-weight: 400 !important;
 }
+
 .has-text-weight-medium {
-    font-weight: $weight-medium !important;
+    font-weight: 500 !important;
 }
+
 .has-text-weight-semibold {
-    font-weight: $weight-semibold !important;
+    font-weight: 600 !important;
 }
+
 .has-text-weight-bold {
-    font-weight: $weight-bold !important;
-}
-
-.is-family-primary {
-    font-family: $family-primary !important;
-}
-
-.is-family-secondary {
-    font-family: $family-secondary !important;
-}
-
-.is-family-sans-serif {
-    font-family: $family-sans-serif !important;
-}
-
-.is-family-monospace {
-    font-family: $family-monospace !important;
-}
-
-.is-family-code {
-     font-family: $family-code !important;
+    font-weight: 700 !important;
 }
