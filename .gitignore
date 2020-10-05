@@ -5,3 +5,5 @@ dist
 
 test/**
 !test/index.html
+
+src/modules/**/*.css
