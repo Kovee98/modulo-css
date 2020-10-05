@@ -12,5 +12,10 @@ export default [
         name: 'typography',
         desc: 'Classes for text and headings',
         isChecked: false
+    },
+    {
+        name: 'columns',
+        desc: 'Classes for a column layout system',
+        isChecked: false
     }
 ];
