@@ -4,6 +4,8 @@ import { Form } from '../types/index';
     the main file that generates the output css files
 */
 
+const basePath = process.env.NODE_ENV === 'production' ? '/modules' : '/src/modules';
+
 function readFile (path: string) {
     return new Promise((resolve, reject) => {
         const req = new XMLHttpRequest();
@@ -42,7 +44,7 @@ export default async function (form: Form) {
             const module = modules[i];
             const name = module.name;
 
-            const data = await readFile(`/modules/${name}/index.css`);
+            const data = await readFile(`${basePath}/${name}/index.css`);
 
             file += data;
             file += '\n\n';

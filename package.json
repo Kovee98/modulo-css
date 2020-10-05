@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build && npm run build:modules",
     "build:modules": "npx sass --no-source-map ./src/modules:./dist/modules",
+    "dev:modules": "npx sass --no-source-map --watch ./src/modules",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
     "bump-version": "npm version --no-git-tag-version $VERSION",
