@@ -1,9 +1,13 @@
 <template>
     <div class="title is-flex">
         <img
-            src="/android-chrome-512x512.png"
+            src="../assets/images/logo.svg"
             class="logo"
         />
+        <!-- <img
+            src="/android-chrome-512x512.png"
+            class="logo"
+        /> -->
         <h2>modulo.css</h2>
     </div>
 </template>
@@ -29,8 +33,8 @@
     }
 
     .logo {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
         margin: 0 1rem;
     }
 </style>
