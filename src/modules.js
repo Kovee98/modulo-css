@@ -35,7 +35,7 @@ export default [
     },
     {
         name: 'misc',
-        desc: 'Classes for random little helper classes',
+        desc: 'Classes for random little helpers',
         isChecked: false
     }
 ];
