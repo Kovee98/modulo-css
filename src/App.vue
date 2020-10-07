@@ -22,6 +22,8 @@
 
         <FileOutputs v-model:form="form" v-model:files="files"/>
     </div>
+
+    <FooterBar/>
 </template>
 
 <script lang="ts">
@@ -29,6 +31,7 @@
     import TitleBar from './components/TitleBar.vue';
     import ModuleList from './components/ModuleList.vue';
     import FileOutputs from './components/FileOutputs.vue';
+    import FooterBar from './components/FooterBar.vue';
     import modules from './modules.js';
     import generate from './js/generator';
     import { Form, Module, File } from './types/index';
@@ -38,7 +41,8 @@
         components: {
             TitleBar,
             ModuleList,
-            FileOutputs
+            FileOutputs,
+            FooterBar
         },
         setup () {
             const form: Form = reactive({
