@@ -22,5 +22,10 @@ export default [
         name: 'position',
         desc: 'Classes for positioning',
         isChecked: false
+    },
+    {
+        name: 'color',
+        desc: 'Classes for colors',
+        isChecked: false
     }
 ];
