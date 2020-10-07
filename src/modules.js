@@ -17,5 +17,10 @@ export default [
         name: 'columns',
         desc: 'Classes for a column layout system',
         isChecked: false
+    },
+    {
+        name: 'position',
+        desc: 'Classes for positioning',
+        isChecked: false
     }
 ];
