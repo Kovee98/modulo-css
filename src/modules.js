@@ -27,5 +27,10 @@ export default [
         name: 'color',
         desc: 'Classes for colors',
         isChecked: false
+    },
+    {
+        name: 'flex',
+        desc: 'Classes for all things flexbox related',
+        isChecked: false
     }
 ];
