@@ -25,6 +25,7 @@
 
     .footer {
         padding: 5rem 0.75rem;
+        margin-top: 5rem;
         background: #313131;
         color: #e9e9e9;
         display: flex;
