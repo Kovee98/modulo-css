@@ -7,7 +7,9 @@
 }
 
 @mixin tablet {
-    @media screen and (min-width: $tablet), print {
+
+    @media screen and (min-width: $tablet),
+    print {
         @content;
     }
 }
@@ -61,5 +63,13 @@
         .is-size-#{$i}#{if($target == "", "", "-" + $target)} {
             font-size: $size !important;
         }
+    }
+}
+
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: " ";
+        display: table;
     }
 }
