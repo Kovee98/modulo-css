@@ -32,5 +32,10 @@ export default [
         name: 'flex',
         desc: 'Classes for all things flexbox related',
         isChecked: false
+    },
+    {
+        name: 'misc',
+        desc: 'Classes for random little helper classes',
+        isChecked: false
     }
 ];
