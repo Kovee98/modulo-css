@@ -1,0 +1,33 @@
+@import '../mixins';
+
+.is-clearfix {
+    @include clearfix;
+}
+
+.is-left {
+    float: left !important;
+}
+
+.is-right {
+    float: right !important;
+}
+
+.is-centered {
+    margin: 0 auto !important;
+}
+
+.is-absolute {
+    position: absolute !important;
+}
+
+.is-fixed {
+    position: fixed !important;
+}
+
+.is-sticky {
+    position: sticky !important;
+}
+
+.is-relative {
+    position: relative !important;
+}

@@ -1,10 +1,11 @@
 <template>
-    <div class="title is-flex">
-        <img
-            src="../assets/images/logo.svg"
-            class="logo"
-        />
-        <h2>modulo.css</h2>
+    <div class="footer is-flex is-centered">
+        <a href="https://github.com/Kovee98/modulo-css">
+            <img
+                src="../assets/images/github_white.png"
+                class="logo"
+            />
+        </a>
     </div>
 </template>
 
@@ -12,7 +13,7 @@
     import { defineComponent } from 'vue';
 
     export default defineComponent({
-        name: 'TitleBar',
+        name: 'FooterBar',
         setup () {
             return {};
         }
@@ -20,12 +21,19 @@
 </script>
 
 <style lang="scss" scoped>
-    .title {
-        padding: 0.75rem;
+    @import '../scss/colors.scss';
+
+    .footer {
+        padding: 5rem 0.75rem;
+        margin-top: 5rem;
         background: #313131;
         color: #e9e9e9;
         display: flex;
         align-items: center;
+
+        a {
+            color: #e9e9e9;
+        }
     }
 
     .logo {

@@ -48,14 +48,15 @@
     .modules {
         display: flex;
         flex-flow: row wrap;
+        justify-content: space-evenly;
 
         .module {
             padding: 1rem;
             margin-right: 1rem;
-            margin-top: 1rem;
+            margin-top: 2rem;
             font-size: 1.5rem;
-            width: 10rem;
-            height: 10rem;
+            width: 12rem;
+            height: 12rem;
             cursor: pointer;
 
             input {

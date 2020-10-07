@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Module Testing</title>
+
+        <!-- test with downloaded file -->
+        <!-- <link rel="stylesheet" href="./test.min.css"> -->
+
+        <!-- test dynamically with sass watched css output files -->
+        <!-- <link rel="stylesheet" href="../src/modules/<module_name>/index.css"> -->
+    </head>
+    <body>
+        <!--
+            This is a sandbox test html page meant for module testing.
+            Please do not commit changes to this file without a good reason.
+        -->
+        
+        <h1>Module Testing Sandbox</h1>
+        
+        <p>
+            The purpose of this HTML is to make sure that all possible HTML Elements are accounted for when 
+            designing your module.
+        </p>
+        
+        <hr>
+        
+        <h1 id="headings">Headings</h1>
+        
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        
+        <small><a href="#">[top]</a></small>
+        <hr>
+        
+        <h1 id="paragraph">Paragraph</h1>
+        
+        <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+        
+        <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+        
+        <small><a href="#">[top]</a></small>
+
+        <hr>
+        
+        <h1 id="list_types">List Types</h1>
+        
+        <h3>Definition List</h3>
+        <dl>
+            <dt>Definition List Title</dt>
+            <dd>This is a definition list division.</dd>
+        </dl>
+        
+        <h3>Ordered List</h3>
+        <ol>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+        </ol>
+        
+        <h3>Unordered List</h3>
+        <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+        </ul>
+        
+        <small><a href="#">[top]</a></small>
+        <hr>
+        
+        <h1 id="form_elements">Fieldsets, Legends, and Form Elements</h1>
+        
+        <fieldset>
+            <legend>Legend</legend>
+        
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+        
+            <form>
+                <h2>Form Element</h2>
+        
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+        
+                <p>
+                    <label for="text_field">Text Field:</label><br />
+                    <input type="text" id="text_field" />
+                </p>
+        
+                <p>
+                    <label for="text_area">Text Area:</label><br />
+                    <textarea id="text_area"></textarea>
+                </p>
+        
+                <p>
+                    <label for="select_element">Select Element:</label><br />
+                    <select name="select_element">
+                        <optgroup label="Option Group 1">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </optgroup>
+                        <optgroup label="Option Group 2">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </optgroup>
+                    </select>
+                </p>
+        
+                <p>
+                    <label for="radio_buttons">Radio Buttons:</label><br />
+                    <input type="radio" class="radio" name="radio_button" value="radio_1" /> Radio 1<br/>
+                    <input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2<br/>
+                    <input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3<br/>
+                </p>
+        
+                <p>
+                    <label for="checkboxes">Checkboxes:</label>
+                    <br />
+                    <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Radio 1<br/>
+                    <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Radio 2<br/>
+                    <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Radio 3<br/>
+                </p>
+        
+                <p>
+                    <label for="password">Password:</label><br />
+                    <input type="password" class="password" name="password" />
+                </p>
+        
+                <p>
+                    <label for="file">File Input:</label><br />
+                    <input type="file" class="file" name="file" />
+                </p>
+        
+                <p>
+                    <input class="button" type="reset" value="Clear" /> <input class="button" type="submit" value="Submit" />
+                </p>
+            </form>
+        </fieldset>
+        
+        <small><a href="#">[top]</a></small>
+        <hr>
+        
+        <h1 id="tables">Tables</h1>
+        <table border="1">
+            <caption>This is a table caption, made with caption</caption>
+            <colgroup span="2">
+                <col>
+                <col>
+            </colgroup>
+            <colgroup></colgroup>
+            <thead>
+                <tr>
+                    <th>Table Header 1</th>
+                    <th>Table Header 2</th>
+                    <th>Table Header 3</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td>Table Footer 1</td>
+                    <td>Table Footer 2</td>
+                    <td>Table Footer 3</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>TD 1.1</td>
+                    <td>TD 1.2</td>
+                    <td>TD 1.3</td>
+                </tr>
+                <tr>
+                    <td>TD 2.1</td>
+                    <td>TD 2.2</td>
+                    <td>TD 2.3</td>
+                </tr>
+                <tr>
+                    <td>TD 3.1</td>
+                    <td>TD 3.2</td>
+                    <td>TD 3.3</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+                <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+            </tr>
+            <tr>
+                <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+            </tr>
+            <tr class="even">
+                <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+            </tr>
+            <tr>
+                <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+            </tr>
+        
+        </table>
+        
+        <small><a href="#">[top]</a></small>
+
+        <hr>
+
+        <h1 id="misc">Misc Stuff - abbr, acronym, pre, code, sub, sup, etc.</h1>
+        <p>
+            <em>This is italic text, made with em.</em> <i>This is italic text as well, made with i.</i>
+        </p>
+        <p>
+            <strong>This is bold text, made with strong.</strong> <b>This is bold text as well, made with b.</b>
+        </p>
+        <p>
+            <u>This is underlined text, made with u.</u> <ins>This is inserted text, made with ins.</ins>
+        </p>
+        <p>
+            <strike>This is deleted (strikethrough) text, made with strike.</strike> <s>This is also strikethrough text, but made with s.</s> <del>This is deleted text, made with del.</del>
+        </p>
+        <p>
+            <code>This is computer code, made with code.</code> <tt>This is teletype text, made with tt.</tt>
+        </p>
+        <p>
+            <kbd>This is text the user is supposed to enter in, or keyboard, made with kbd.</kbd> <var>This is a variable, made with var.</var> <samp>This is sample program output, made with samp.</samp>
+        </p>
+        <p>
+            <small>This is small text, made with small.</small> <big>This is big text, made with big.</big>
+        </p>
+        <p>
+            <cite>This is a citation, made with cite.</cite> This is a <q>short quotation</q> in the middle of a sentence, made with q.
+        </p>
+        <p>
+            This sentence ends with a <sup>superscript</sup>. This sentence ends with a <sub>subscript</sub>.
+        </p>
+        <p>
+            This is an abbreviation, made with abbr: <abbr>WWW</abbr>. This is an acronym, made with acronym: <acronym title="National Basketball Association">NBA</acronym>. This is a term that needs a definition, made with dfn: <dfn>Yog-Sothoth</dfn>.
+        </p>
+        <p>
+            This is an address with breaks:
+        </p>
+        <address>
+            John Q. Public
+            <br>123 Main Street
+            <br>Anywhere, ST 12345
+        </address>
+        <p>
+            This is a long quotation inside a blockquote:
+        </p>
+        <blockquote>
+            <p>
+                “I love songs about horses, railroads, land, judgement day, family, hard times, whiskey, courtship, marriage, adultery, separation, murder, war, prison, rambling, damnation, home, salvation, death, pride, humor, piety, rebellion, patriotism, larceny, determination, tragedy, rowdiness, heartbreak, and love. And Mother. And God.” ~ Johnny Cash
+            </p>
+        </blockquote>
+        <p>
+            This is pre-formatted:
+        </p>
+        <pre>
+        Start in column one.
+                Then indent to column ten.
+            Then back five spaces.
+        </pre>
+    </body>
+</html>

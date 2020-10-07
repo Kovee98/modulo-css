@@ -5,12 +5,37 @@
 export default [
     {
         name: 'spacing',
-        desc: 'Classes for margins, padding, etc.',
+        desc: 'Classes for margins and padding.',
         isChecked: false
     },
     {
         name: 'typography',
-        desc: 'Classes for all things text related.',
+        desc: 'Classes for text and headings',
+        isChecked: false
+    },
+    {
+        name: 'columns',
+        desc: 'Classes for a column layout system',
+        isChecked: false
+    },
+    {
+        name: 'position',
+        desc: 'Classes for positioning',
+        isChecked: false
+    },
+    {
+        name: 'color',
+        desc: 'Classes for colors',
+        isChecked: false
+    },
+    {
+        name: 'flex',
+        desc: 'Classes for all things flexbox related',
+        isChecked: false
+    },
+    {
+        name: 'misc',
+        desc: 'Classes for random little helper classes',
         isChecked: false
     }
 ];
