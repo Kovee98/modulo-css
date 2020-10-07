@@ -3,7 +3,7 @@
         v-if="files && files.length > 0"
         class="section"
     >
-        <h3 class="mb-1">
+        <h3>
             Output
             <span class="is-light ml-1">(Download your files)</span>
         </h3>
@@ -62,7 +62,7 @@
         justify-content: space-between;
         align-items: center;
         margin: 0 auto;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         padding: 1rem;
 
         .name {
